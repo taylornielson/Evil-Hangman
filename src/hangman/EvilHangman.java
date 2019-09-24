@@ -63,7 +63,6 @@ public class EvilHangman {
             if (letters == 0)
             {
                 System.out.println("Sorry, there are no "+guess+"'s");
-                System.out.println(numGuesses);
                 numGuesses--;
             }
             else

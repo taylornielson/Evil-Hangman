@@ -191,8 +191,11 @@ public class EvilHangmanGame implements IEvilHangmanGame {
         if (!guessedChar.isEmpty()) {
             SortedSet<Character> temp = getGuessedLetters();
             System.out.println("Used letters: " + temp.toString().substring(1,temp.toString().length()-1));
-            System.out.println("\n");
-            ;
+            //System.out.println("\n");
+
+        }
+        else{
+            System.out.println("Used letters: ");
         }
     }
 
