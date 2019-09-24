@@ -70,7 +70,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
     {
         int ctr = 0;
         for (int i = 0; i < wordLength; ++i){
-            if (guessMap.get(i).charAt(i) != '-'){
+            if (guessMap.get(i) != "-"){
                 ctr += 1;
             }
         }
