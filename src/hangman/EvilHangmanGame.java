@@ -63,24 +63,10 @@ public class EvilHangmanGame implements IEvilHangmanGame {
             wordDivider = separateWords(guess, wordDivider, it.next());
         }
         words = getBest(wordDivider, guess);
-        update_guesses();
+        //update_guesses();
         return words;
     }
-    private void update_guesses()
-    {
-        int ctr = 0;
-        for (int i = 0; i < wordLength; ++i){
-            if (guessMap.get(i) != "-"){
-                ctr += 1;
-            }
-        }
-        lettersLeft = wordLength - ctr;
-        System.out.println(guessMap.get(0));
-        System.out.println(wordLength);
-        System.out.println(ctr);
-        System.out.println(guessMap.toString());
-        System.out.println(lettersLeft);
-    }
+
     @Override
     public SortedSet<Character> getGuessedLetters() {
         return guessedChar;
@@ -214,7 +200,16 @@ public class EvilHangmanGame implements IEvilHangmanGame {
     }
     public boolean isWon()
     {
-       return (lettersLeft ==0);
+        StringBuilder build = new StringBuilder();
+        for(int i = 0; i < wordLength; ++i){
+            build.append(guessMap.get(i));
+        }
+        if (build.toString().contains("-"){
+            return false;
+        }
+            else{
+                return true;
+            }
     }
     public String fakeWord(){
         Iterator<String> it = words.iterator();
