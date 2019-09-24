@@ -4,7 +4,7 @@ public class EvilHangman {
 
     public static void main(String[] args) throws IOException, EmptyDictionaryException{
         int wordLength ;
-        int numGuesses;
+        int numGuesses ;
         Console c = System.console();
         File dictionary = new File(args[0]);
         try{
@@ -64,6 +64,7 @@ public class EvilHangman {
             if (letters == 0)
             {
                 System.out.println("Sorry, there are no "+guess+"'s");
+                System.out.println(numGuesses);
                 numGuesses--;
             }
             else

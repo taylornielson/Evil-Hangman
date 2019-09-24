@@ -206,7 +206,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
     }
     public boolean isWon()
     {
-        return (lettersLeft == 0);
+        return (numLetter == wordLength);
     }
     public String fakeWord(){
         Iterator<String> it = words.iterator();
