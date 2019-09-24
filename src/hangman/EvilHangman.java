@@ -36,7 +36,6 @@ public class EvilHangman {
             else{
                 System.out.println("You have 1 guess left");
             }
-            System.out.print("Used letters: " );
             myGame.printGuessed();
             myGame.printWord();
             String guess = null;

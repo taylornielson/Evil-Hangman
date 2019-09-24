@@ -190,7 +190,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
     public void printGuessed(){
         if (!guessedChar.isEmpty()) {
             SortedSet<Character> temp = getGuessedLetters();
-            System.out.println("Used letters: " + temp.toString());
+            System.out.println("Used letters: " + temp.toString().substring(1,temp.toString().length()-1));
             System.out.println("\n");
             ;
         }
