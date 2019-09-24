@@ -204,7 +204,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
         for(int i = 0; i < wordLength; ++i){
             build.append(guessMap.get(i));
         }
-        if (build.toString().contains("-"){
+        if (build.toString().contains("-")){
             return false;
         }
             else{
