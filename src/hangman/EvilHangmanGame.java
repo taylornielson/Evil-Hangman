@@ -14,6 +14,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
     private int lettersLeft;
     private int guessNum;
     public char lastGuessedLetter;
+    public int numLetter;
 
     @Override
     public void startGame(File dictionary, int wordLength) throws IOException, EmptyDictionaryException {
@@ -42,6 +43,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
                 guessMap.put(i, "-");
             }
             lettersLeft = wordLength;
+            numLetter = 0;
             guessNum = 0;
 
 
@@ -61,9 +63,19 @@ public class EvilHangmanGame implements IEvilHangmanGame {
             wordDivider = separateWords(guess, wordDivider, it.next());
         }
         words = getBest(wordDivider, guess);
+        update_guesses();
         return words;
     }
-
+    private void update_guesses()
+    {
+        int ctr = 0;
+        for (int i = 0; i < wordLength; ++i){
+            if (guessMap.get(i) != "-"){
+                ctr += 1;
+            }
+        }
+        lettersLeft = wordLength - ctr;
+    }
     @Override
     public SortedSet<Character> getGuessedLetters() {
         return guessedChar;
@@ -94,6 +106,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
     }
     //FIXME FIND THE BIGGEST SET
     private Set<String> getBest(HashMap<String, Set<String>> h, char g) {
+        numLetter = 0;
         Set<String> tempSet = new HashSet<String>();
         String tempKey = "";
         for (Map.Entry<String, Set<String>> entry : h.entrySet()) {
@@ -134,9 +147,14 @@ public class EvilHangmanGame implements IEvilHangmanGame {
             build.append(tempKey.charAt(i));
             guessMap.put(i, build.toString());
         }
-        System.out.println(tempSet.toString());
+        for (int i = 0; i < wordLength; ++i){
+            if (tempKey.charAt(i) == g){
+                numLetter +=1;
+            }
+        }
         return tempSet;
     }
+
 
     private int getNumLetters(String s, char g){
         int total= 0;

@@ -60,7 +60,7 @@ public class EvilHangman {
                 }
             }
 
-            int letters = myGame.lastGuessedLetter;
+            int letters = myGame.numLetter;
             if (letters == 0)
             {
                 System.out.println("Sorry, there are no "+guess+"'s");
