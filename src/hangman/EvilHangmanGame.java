@@ -75,6 +75,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
             }
         }
         lettersLeft = wordLength - ctr;
+        System.out.println(lettersLeft);
     }
     @Override
     public SortedSet<Character> getGuessedLetters() {
