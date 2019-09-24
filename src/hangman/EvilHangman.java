@@ -62,12 +62,12 @@ public class EvilHangman {
             int letters = myGame.numLetter;
             if (letters == 0)
             {
-                System.out.println("Sorry, there are no "+guess+"'s");
+                System.out.println("Sorry, there are no "+guess+"'s\n");
                 numGuesses--;
             }
             else
             {
-                System.out.println("Yes, there are "+letters+ " "+guess+"'s");
+                System.out.println("Yes, there are "+letters+ " "+guess+"'s\n");
             }
 
             if (myGame.isWon())
