@@ -209,17 +209,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
     }
     public boolean isWon()
     {
-        StringBuilder build = new StringBuilder();
-        boolean tf = true;
-        for (int i = 0; i < wordLength; ++i){
-            if (guessMap.get(i) != "-"){
-                continue;
-            }
-            else{
-                tf = false;
-                break;
-            }
-        return (tf);
+       return (lettersLeft ==0);
     }
     public String fakeWord(){
         Iterator<String> it = words.iterator();
