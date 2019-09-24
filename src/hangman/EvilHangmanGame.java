@@ -75,6 +75,9 @@ public class EvilHangmanGame implements IEvilHangmanGame {
             }
         }
         lettersLeft = wordLength - ctr;
+        System.out.println(wordLength);
+        System.out.println(ctr);
+        System.out.println(guessMap.toString());
         System.out.println(lettersLeft);
     }
     @Override
